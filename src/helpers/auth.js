@@ -1,7 +1,7 @@
 import { ref, firebaseAuth } from '../config/constants'
 
-export function auth (email, pw) {
-  return firebaseAuth().createUserWithEmailAndPassword(email, pw)
+export function auth (email, password) {
+  return firebaseAuth().createUserWithEmailAndPassword(email, password)
     .then(saveUser)
 }
 
@@ -9,8 +9,8 @@ export function logout () {
   return firebaseAuth().signOut()
 }
 
-export function login (email, pw) {
-  return firebaseAuth().signInWithEmailAndPassword(email, pw)
+export function login (email, password) {
+  return firebaseAuth().signInWithEmailAndPassword(email, password)
 }
 
 export function resetPassword (email) {

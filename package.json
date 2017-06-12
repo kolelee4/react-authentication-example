@@ -1,5 +1,5 @@
 {
-  "name": "react-router-firebase-auth",
+  "name": "react-authentication-example",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {

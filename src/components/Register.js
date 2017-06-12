@@ -8,12 +8,17 @@ function setErrorMsg(error) {
 }
 
 export default class Register extends Component {
-  state = { registerError: null }
+  state = {
+    registerError: null
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
-    auth(this.email.value, this.pw.value)
+
+    auth(this.email.value, this.password.value)
       .catch(e => this.setState(setErrorMsg(e)))
   }
+
   render () {
     return (
       <div className="col-sm-6 col-sm-offset-3">
@@ -21,11 +26,19 @@ export default class Register extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Email</label>
-            <input className="form-control" ref={(email) => this.email = email} placeholder="Email"/>
+            <input
+              className="form-control"
+              placeholder="Email"
+              ref={(email) => this.email = email}
+            />
           </div>
           <div className="form-group">
             <label>Password</label>
-            <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Password"
+              ref={(password) => this.password = password} />
           </div>
           {
             this.state.registerError &&
